@@ -13,7 +13,21 @@
   color: white;
 }
 
-.App p{
+.App p {
   padding-left: 10vw;
   padding-right: 10vw;
+}
+
+/* tooltip style. reference -> https://bl.ocks.org/d3noob/180287b6623496dbb5ac4b048813af52 */
+div.tooltip {
+  position: absolute;
+  text-align: center;
+  width: fit-content;
+  padding: 10px;
+  font: 12px sans-serif;
+  background: #2c2c2c;
+  border: 0px;
+  border-radius: 5px;
+  pointer-events: none;
+  color: white;
 }

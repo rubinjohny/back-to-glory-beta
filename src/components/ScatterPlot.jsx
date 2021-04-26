@@ -93,7 +93,24 @@ export const ScatterPlot = (props) => {
             .join("circle")
             .attr("cx", d => x(d.x))
             .attr("cy", d => y(d.y))
-            .attr("r", 3);
+            .attr("r", 5)
+            .on("mouseover", (event, d) => {
+                div.transition()
+                    .duration(200)
+                    .style("opacity", .9);
+                div.html(`Name : ${d.name} <br/> Team : ${d.team} <br/> Rating : ${d.rating} <br/> Goals : ${d.goals} <br /> Assists : ${d.assists} <br/>`)
+                    .style("left", (event.pageX + 10) + "px")
+                    .style("top", (event.pageY - 20) + "px");
+            })
+            .on("mouseout", _ => {
+                div.transition()
+                    .duration(500)
+                    .style("opacity", 0);
+            })
+            .on("mousemove", event => {
+                div.style("left", (event.pageX ) + "px")
+                    .style("top", (event.pageY ) + "px")
+            })
 
         svg
             .append("text")
@@ -108,6 +125,13 @@ export const ScatterPlot = (props) => {
             .text("Assists")
             .style("text-anchor", "middle")
             .style("font-size", "12px")
+
+        // tooltip div -> refered example https://bl.ocks.org/d3noob/180287b6623496dbb5ac4b048813af52
+        const div = d3
+            .select("body")
+            .append("div")
+            .attr("class", "tooltip")
+            .style("opacity", 0);
     }
     
     useEffect(() => {

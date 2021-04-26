@@ -61,8 +61,33 @@ export const PieChart = (props) => {
             .join("path")
             .attr("fill", d => color(d.data.name))
             .attr("d", arc)
+            .on("mouseover", (event, d) => {
+                let finStr = "";
+                Transfers.transfers[props.manager].players.forEach(p => {
+                    if(p.position === d.data.name)
+                        finStr = finStr.concat(p.name, " - " ,p.cost," <br/>")
+                        
+                })
+
+                div.transition()
+                    .duration(200)
+                    .style("opacity", .9);
+                div.html(`Players <br/> ${finStr}`)
+                    .style("left", (event.pageX + 10) + "px")
+                    .style("top", (event.pageY - 20) + "px");
+            })
+            .on("mouseout", _ => {
+                div.transition()
+                    .duration(500)
+                    .style("opacity", 0);
+            })
+            .on("mousemove", event => {
+                div.style("left", (event.pageX + 10) + "px")
+                    .style("top", (event.pageY - 20) + "px")
+            })
             .append("title")
-            .text(d => `${d.data.name}: ${d.data.value.toLocaleString()}`);
+            .text(d => `${d.data.name}: ${d.data.value.toLocaleString()}`)
+            
 
 
         svg.append("g")
@@ -82,6 +107,14 @@ export const PieChart = (props) => {
                 .attr("y", "0.7em")
                 .attr("fill-opacity", 0.7)
                 .text(d => d.data.value.toLocaleString()));
+
+        // tooltip div -> refered example https://bl.ocks.org/d3noob/180287b6623496dbb5ac4b048813af52
+        const div = d3
+            .select("body")
+            .append("div")
+            .attr("class", "tooltip")
+            .style("opacity", 0);
+
     },[])
 
     return(

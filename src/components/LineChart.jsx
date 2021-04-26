@@ -31,8 +31,8 @@ export const LineChart = props => {
 
         const setRangeAs = props.invert ? [height, 0] : [0, height]
 
-        var y = d3.scaleLinear().range(setRangeAs);
-        var yAxis = d3.axisLeft().scale(y);
+        var y = d3.scaleLinear().range(setRangeAs)
+        var yAxis = d3.axisLeft().scale(y).ticks(props.type == "finish" ? 7 : null)
         svg.append("g")
             .attr("class", "myYaxis")
 
@@ -52,8 +52,6 @@ export const LineChart = props => {
             .duration(500)
             .call(yAxis);
 
-
-
         const u = svg.selectAll(".lineTest")
             .data([Finishes.manutd], d => d[props.type]);
 
@@ -72,6 +70,7 @@ export const LineChart = props => {
             .attr("fill", "none")
             .attr("stroke", "steelblue")
             .attr("stroke-width", 2.5)
+            
 
         svg
             .append("text")

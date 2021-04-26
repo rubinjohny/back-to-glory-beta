@@ -75,7 +75,24 @@ export const BarChart = () => {
             .attr("x", (d, i) => x(i))
             .attr("y", d => y(d.value))
             .attr("height", d => y(0) - y(d.value))
-            .attr("width", x.bandwidth());
+            .attr("width", x.bandwidth())
+            .on("mouseover", (event, d) => {
+                div.transition()
+                    .duration(200)
+                    .style("opacity", .9);
+                div.html(`Manager : ${d.name} <br/> Money spent : ${d.value} Million dollars<br/>`)
+                    .style("left", (event.pageX + 10) + "px")
+                    .style("top", (event.pageY - 20) + "px");
+            })
+            .on("mouseout", _ => {
+                div.transition()
+                    .duration(500)
+                    .style("opacity", 0);
+            })
+            .on("mousemove", event => {
+                div.style("left", (event.pageX + 10) + "px")
+                    .style("top", (event.pageY - 20) + "px")
+            })
 
         svg
             .append("text")
@@ -90,6 +107,13 @@ export const BarChart = () => {
             .text("Managers")
             .style("text-anchor", "middle")
             .style("font-size", "12px")
+
+        // tooltip div -> refered example https://bl.ocks.org/d3noob/180287b6623496dbb5ac4b048813af52
+        const div = d3
+            .select("body")
+            .append("div")
+            .attr("class", "tooltip")
+            .style("opacity", 0);
 
     }, [])
 
