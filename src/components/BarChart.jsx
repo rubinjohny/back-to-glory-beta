@@ -74,7 +74,7 @@ export const BarChart = () => {
             .join("rect")
             .attr("x", (d, i) => x(i))
             .attr("y", d => y(d.value))
-            .attr("height", d => y(0) - y(d.value))
+            .attr("height", d => 0 )
             .attr("width", x.bandwidth())
             .on("mouseover", (event, d) => {
                 div.transition()
@@ -93,6 +93,13 @@ export const BarChart = () => {
                 div.style("left", (event.pageX + 10) + "px")
                     .style("top", (event.pageY - 20) + "px")
             })
+
+        svg.selectAll("rect")
+            .transition()
+            .duration(800)
+            .attr("y", function (d) { return y(d.value); })
+            .attr("height", function (d) { return y(0) - y(d.value); })
+            .delay(function (d, i) { return (i * 200) })
 
         svg
             .append("text")

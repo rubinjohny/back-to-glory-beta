@@ -71,10 +71,11 @@ export const GroupedBarChart = () => {
             .selectAll("rect")
             .data(d => keys.map(key => ({ key, value: d[key] })))
             .join("rect")
+            .attr("class","main-bar")
             .attr("x", d => x1(d.key))
             .attr("y", d => y(d.value))
             .attr("width", x1.bandwidth())
-            .attr("height", d => y(0) - y(d.value))
+            .attr("height", d => 0)
             .attr("fill", d => color(d.key))
             .on("mouseover", (event, d) => {
                 div.transition()
@@ -126,6 +127,13 @@ export const GroupedBarChart = () => {
                 .text(type)
                 .attr("fill", color(fillId))
         })
+
+        svg.selectAll(".main-bar")
+            .transition()
+            .duration(800)
+            .attr("y", function (d) { return y(d.value); })
+            .attr("height", function (d) { return y(0) - y(d.value); })
+            .delay(function (d, i) { return (i * 200) })
 
         // tooltip div -> refered example https://bl.ocks.org/d3noob/180287b6623496dbb5ac4b048813af52
         const div = d3
