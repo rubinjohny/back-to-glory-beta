@@ -81,7 +81,7 @@ export const GroupedBarChart = () => {
                 div.transition()
                     .duration(200)
                     .style("opacity", .9);
-                div.html(`Bar : ${d.key} <br/> Count : ${d.value} <br/>`)
+                div.html(`${d.value} ${d.key} <br/>`)
                     .style("left", (event.pageX + 10) + "px")
                     .style("top", (event.pageY - 20) + "px");
             })

@@ -87,7 +87,7 @@ export const ScatterPlot = (props) => {
         svg.append("g")
             .attr("stroke", "steelblue")
             .attr("stroke-width", 1.5)
-            .attr("fill", "none")
+            .attr("fill", "steelblue")
             .selectAll("circle")
             .data(data)
             .join("circle")
@@ -99,8 +99,8 @@ export const ScatterPlot = (props) => {
                     .duration(200)
                     .style("opacity", .9);
                 div.html(`Name : ${d.name} <br/> Team : ${d.team} <br/> Rating : ${d.rating} <br/> Goals : ${d.goals} <br /> Assists : ${d.assists} <br/>`)
-                    .style("left", (event.pageX + 10) + "px")
-                    .style("top", (event.pageY - 20) + "px");
+                    .style("left", (event.pageX ) + "px")
+                    .style("top", (event.pageY ) + "px");
             })
             .on("mouseout", _ => {
                 div.transition()

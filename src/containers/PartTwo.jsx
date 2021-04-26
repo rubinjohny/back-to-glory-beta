@@ -4,9 +4,9 @@ import { MultipleLineChart } from '../components/MultipleLineChart'
 
 
 const textData = {
-    "finishes": "Under the 18 years of leadership of Ferguson, Manchester United achieved 11 championships and consistently held the top three positions. Season 2013-2014 saw a sharp decline to the 7th position after the team was restructured under the leadership of David Moyes. It can also be understood that recovery to 2nd position was only achieved 5 years later.",
-    "points": "During the leadership of Ferguson, Manchester United maintained an average of 83 points with the highest acheived point totaling 91 for the season 1999/2000 and the lowest point being 75. In the season of 2013-2014 we see yet another sharp decline to 64 making this the lowest point scored in the history of the team. It is noted that the team has not fully recovered from this decline with the highest Post Ferguson Era point still at 81.",
-    "goal-differences": "Here we see an interesting shift in the nature of the data. While the average goal difference in the Ferguson era was 44 and Post- Ferguson era is 24, we do see highs and lows in both eras. While Coach Mourinho was able to achieve a goal difference of 40 in the season 2017 - 2018, it can be inferred that the goal difference of the team sufferred under the various other coach tenures."
+    "finishes": "Over the course of 7 years, while Manchester United found it very difficult to win titles, rival teams such as Liverpool and Manchester City found success by winning leagues!",
+    "points": "This 7 season period also saw Manchester City acheive an all time high points tally of 100 points and Liverpool acheiving 99 points. These total points tally were too big to match for Manchester united who could only hit 81 points tally.",
+    "goal-differences": "Goal differences direclty affects the chances of winning games. The difference between Man utd and Their rival teams are very evident here. Manchester United during this period consistently lacked defensively as well as offensively."
 }
 
 const getGraph = type => {

@@ -42,7 +42,7 @@ function App() {
       <PartFour />
       
       <div style={{ padding: "50px 50px" }}>
-        Footer
+        Conclusion ...
       </div>
     </div>
   );

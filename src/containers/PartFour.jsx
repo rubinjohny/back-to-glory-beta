@@ -42,6 +42,10 @@ export const PartFour = () => {
             <div style={{padding:30}}>
                 <ScatterPlot data={data} />
             </div>
+
+            <div style={{padding:50}}>
+                The above scatterplot lets you see the top performing players in the league. You can also see how manchester United players have been added recently to the lists. This is an affect of increased confidence and team building under the current manager Ole Gunnar Solskjaer.
+            </div>
         </div>
     )
 }
