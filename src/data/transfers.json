@@ -1,0 +1,119 @@
+{
+    "transfers":{
+        "dm":{
+            "total":84.84,
+            "players":[
+                {
+                    "name":"Juan Mata",
+                    "cost":49.2,
+                    "position":"MID"
+                },
+                {
+                    "name":"Marouane Fellaini",
+                    "cost":35.64,
+                    "position":"MID"
+                }
+            ]
+        },
+        "lvg":{
+            "total":295.35,
+            "players":[
+                {
+                    "name": "Ángel Di María",
+                    "cost": 82.50,
+                    "position": "ATT"
+                },
+                {
+                    "name": "Anthony Martial",
+                    "cost": 66.00,
+                    "position": "ATT"
+                },
+                {
+                    "name": "Morgan Schneiderlin",
+                    "cost": 38.50,
+                    "position": "MID"
+                },
+                {
+                    "name": "Memphis Depay",
+                    "cost": 37.40,
+                    "position": "ATT"
+                },
+                {
+                    "name": "Marcos Rojo",
+                    "cost": 22.00,
+                    "position": "DEF"
+                },
+                {
+                    "name": "MATTeo Darmian",
+                    "cost": 19.80,
+                    "position": "DEF"
+                },
+                {
+                    "name":"Daley Blind",
+                    "cost":19.25,
+                    "position":"DEF"
+                },
+                {
+                    "name":"Bastian Schweinsteiger",
+                    "cost":9.90,
+                    "position":"MID"
+                }
+            ]
+        },
+        "jm":{
+            "total":512.71,
+            "players":[
+                {
+                    "name": "Paul Pogba",
+                    "cost": 115.50,
+                    "position": "MID" 
+                },
+                {
+                    "name": "Romelu Lukaku",
+                    "cost": 93.17,
+                    "position": "ATT"
+                },
+                {
+                    "name": "Fred",
+                    "cost": 64.90,
+                    "position": "MID"  
+                },
+                {
+                    "name": "Nemanja Matic",
+                    "cost": 49.17,
+                    "position": "MID"
+                },
+                {
+                    "name": "Henrikh Mkhitaryan",
+                    "cost": 46.20,
+                    "position": "ATT"
+                },
+                {
+                    "name": "Eric Bailly",
+                    "cost": 41.80,
+                    "position": "DEF"   
+                },
+                {
+                    "name": "Victor Lindelöf",
+                    "cost": 38.50,
+                    "position": "DEF"
+                },
+                {
+                    "name": "Alexis Sánchez",
+                    "cost": 37.40,
+                    "position": "ATT" 
+                },
+                {
+                    "name": "Diogo Dalot",
+                    "cost": 24.20,
+                    "position": "DEF" 
+                },
+                {
+                    "name":"Lee Grant",
+                    "cost":1.87,
+                    "position":"GK"
+                }
+            ]
+        }
+    }
+}

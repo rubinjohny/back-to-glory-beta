@@ -1,0 +1,44 @@
+{
+    "managers":[
+        {
+            "name": "David Moyes",
+            "season": 1,
+            "short": "DM - Season 1",
+            "wins": 19,
+            "draws": 7,
+            "loss": 12
+        },
+        {
+            "name": "Louis Van Gaal",
+            "season": 1,
+            "short": "LVG - Season 1",
+            "wins": 20,
+            "draws": 10,
+            "loss": 8
+        },
+        {
+            "name": "Louis Van Gaal",
+            "season": 2,
+            "short": "LVG - Season 2",
+            "wins": 19,
+            "draws": 9,
+            "loss": 10
+        },
+        {
+            "name": "Jose Mourinho",
+            "season": 1,
+            "short": "JM - Season 1",
+            "wins": 18,
+            "draws": 15,
+            "loss": 5
+        },
+        {
+            "name": "Jose Mourinho",
+            "season": 2,
+            "short": "JM - Season 2",
+            "wins": 25,
+            "draws": 6,
+            "loss": 7
+        }
+    ]
+}

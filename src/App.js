@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import {PartOne} from "./containers/PartOne.jsx"
 import manutd from './data/manchester-united.png'
 
-
+import { PartOne } from "./containers/PartOne"
 import { PartTwo } from './containers/PartTwo';
-import { MultipleLineChart } from './components/MultipleLineChart';
+import { PartThree } from './containers/PartThree';
+import { PartFour } from './containers/PartFour';
 
 function App() {
 
@@ -37,6 +37,9 @@ function App() {
 
       <PartTwo/>
 
+      <PartThree />
+      
+      <PartFour />
       
       <div style={{ padding: "50px 50px" }}>
         Footer
