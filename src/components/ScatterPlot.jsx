@@ -1,4 +1,4 @@
-import React,{useEffect, useState} from 'react'
+import React,{useEffect} from 'react'
 import * as d3 from 'd3'
 
 const margin = { top: 50, right: 10, bottom: 50, left: 30 },
@@ -6,10 +6,7 @@ const margin = { top: 50, right: 10, bottom: 50, left: 30 },
     height = 500 - margin.top - margin.bottom;
 
 export const ScatterPlot = (props) => {
-    
-    
-    useEffect(() => {
-
+    const drawScatterplot = () => {
         var data = props.data;
 
         data.forEach(d => {
@@ -111,8 +108,12 @@ export const ScatterPlot = (props) => {
             .text("Assists")
             .style("text-anchor", "middle")
             .style("font-size", "12px")
-
-    }, [])
+    }
+    
+    useEffect(() => {
+        d3.select(".scatterplot").remove();
+        drawScatterplot()
+    }, [props.data])
 
 
     return (

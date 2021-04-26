@@ -18,7 +18,7 @@ export const PartFour = () => {
     const [selectedOption, setSelectedOption] = useState("2013/2014")
     const [data, setData] = useState(Players[selectedOption])
     const handleChange = selected => {
-        setSelectedOption(selected.value)
+        setSelectedOption(selected)
         setData(Players[selected.value])
     }
 
