@@ -2,16 +2,18 @@ import React, {useEffect} from 'react'
 import * as d3 from "d3";
 import Finishes from '../data/finishes.json'
 
+window.d3 = d3;
+
 const margin = { top: 30, right: 10, bottom: 50, left: 50 },
     width = 760 - margin.left - margin.right,
     height = 400 - margin.top - margin.bottom;
 
 export const LineChart = props => {
 
-    useEffect(() => {
-
-        const svg = d3.select("#"+props.id)
+    const drawGraph = () => {
+        const svg = d3.select("#" + props.id)
             .append("svg")
+            .attr("class", `${props.id}`)
             .attr("width", width + margin.left + margin.right)
             .attr("height", height + margin.top + margin.bottom)
             .append("g")
@@ -41,7 +43,7 @@ export const LineChart = props => {
             .selectAll("text")
             .attr("transform", "rotate(-45)")
             .style("text-anchor", "end");
-            
+
 
         // create the Y axis
         y.domain([1, d3.max(Finishes["manutd"], d => d[props.type])]).nice();
@@ -50,7 +52,7 @@ export const LineChart = props => {
             .duration(500)
             .call(yAxis);
 
-        
+
 
         const u = svg.selectAll(".lineTest")
             .data([Finishes.manutd], d => d[props.type]);
@@ -68,7 +70,7 @@ export const LineChart = props => {
                 .y(d => y(d[props.type]))
             )
             .attr("fill", "none")
-            .attr("stroke","steelblue")
+            .attr("stroke", "steelblue")
             .attr("stroke-width", 2.5)
 
         svg
@@ -77,10 +79,10 @@ export const LineChart = props => {
             .text(props.yLabel)
             .style("text-anchor", "middle")
             .style("font-size", "12px")
-        
+
         svg
             .append("text")
-            .attr("transform", `translate(${width/2},${height + 50})`)
+            .attr("transform", `translate(${width / 2},${height + 50})`)
             .text(props.xLabel)
             .style("text-anchor", "middle")
             .style("font-size", "12px")
@@ -105,20 +107,35 @@ export const LineChart = props => {
             .style("text-anchor", "end")
             .style("font-size", "14px")
             .style("fill", "green")
-        
-            svg
+
+        svg
             .append("text")
             .attr("transform", `translate(${x("12/13") + 35},${140})`)
             .text("Post Golden Era")
             .style("text-anchor", "start")
             .style("font-size", "14px")
             .style("fill", "red")
-        
-    }, [])
+    }
     
-    
+    useEffect(() => {
 
-   
+        if (props.id === "line-chart-point"){
+            d3.select(".line-chart-finish").remove();
+            d3.select(".line-chart-goalDiff").remove();
+        }
+
+        if (props.id === "line-chart-goalDiff"){
+            d3.select(".line-chart-finish").remove();
+            d3.select(".line-chart-point").remove();
+        }
+
+        if (props.id === "line-chart-finish"){
+            d3.select(".line-chart-goalDiff").remove();
+            d3.select(".line-chart-point").remove();
+        }
+
+        drawGraph()
+    }, [props.id])
     
     return(
         <div id={props.id} />

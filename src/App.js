@@ -1,8 +1,16 @@
+import React from 'react';
 import './App.css';
 import {PartOne} from "./containers/PartOne.jsx"
 import manutd from './data/manchester-united.png'
 
+
+import { PartTwo } from './containers/PartTwo';
+import { MultipleLineChart } from './components/MultipleLineChart';
+
 function App() {
+
+  
+
   return (
     <div className="App">
       <header className="App-header">
@@ -26,8 +34,18 @@ function App() {
       </header>
 
       <PartOne />
+
+      <PartTwo/>
+
+      
+      <div style={{ padding: "50px 50px" }}>
+        Footer
+      </div>
     </div>
   );
+
+
+  
 }
 
 export default App;

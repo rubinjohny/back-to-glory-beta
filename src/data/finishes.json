@@ -175,5 +175,107 @@
             "points":66,
             "goaldiff":30
         }
+    ],
+    "mancity": [
+        {
+            "id": 19,
+            "season": "13/14",
+            "finish": 1,
+            "points": 86,
+            "goaldiff": 65
+        },
+        {
+            "id": 20,
+            "season": "14/15",
+            "finish": 2,
+            "points": 79,
+            "goaldiff": 45
+        },
+        {
+            "id": 21,
+            "season": "15/16",
+            "finish": 4,
+            "points": 66,
+            "goaldiff": 30
+        },
+        {
+            "id": 22,
+            "season": "16/17",
+            "finish": 3,
+            "points": 78,
+            "goaldiff": 41
+        },
+        {
+            "id": 23,
+            "season": "17/18",
+            "finish": 1,
+            "points": 100,
+            "goaldiff": 79
+        },
+        {
+            "id": 24,
+            "season": "18/19",
+            "finish": 1,
+            "points": 98,
+            "goaldiff": 72
+        },
+        {
+            "id": 25,
+            "season": "19/20",
+            "finish": 2,
+            "points": 81,
+            "goaldiff": 67
+        }
+    ],
+    "liv": [
+        {
+            "id": 19,
+            "season": "13/14",
+            "finish": 2,
+            "points": 84,
+            "goaldiff": 51
+        },
+        {
+            "id": 20,
+            "season": "14/15",
+            "finish": 6,
+            "points": 62,
+            "goaldiff": 4
+        },
+        {
+            "id": 21,
+            "season": "15/16",
+            "finish": 8,
+            "points": 60,
+            "goaldiff": 13
+        },
+        {
+            "id": 22,
+            "season": "16/17",
+            "finish": 4,
+            "points": 76,
+            "goaldiff": 36
+        },
+        {
+            "id": 23,
+            "season": "17/18",
+            "finish": 4,
+            "points": 75,
+            "goaldiff": 46
+        },
+        {
+            "id": 24,
+            "season": "18/19",
+            "finish": 2,
+            "points": 97,
+            "goaldiff": 67
+        },
+        {
+            "id": 25,
+            "season": "19/20",
+            "finish": 1,
+            "points": 99,
+            "goaldiff": 52
+        }
     ]
 }

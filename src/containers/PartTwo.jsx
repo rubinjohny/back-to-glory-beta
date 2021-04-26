@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import { Scrollama, Step } from 'react-scrollama';
-import { LineChart } from '../components/LineChart'
+import { MultipleLineChart } from '../components/MultipleLineChart'
+
 
 const textData = {
     "finishes": "Under the 18 years of leadership of Ferguson, Manchester United achieved 11 championships and consistently held the top three positions. Season 2013-2014 saw a sharp decline to the 7th position after the team was restructured under the leadership of David Moyes. It can also be understood that recovery to 2nd position was only achieved 5 years later.",
@@ -12,8 +13,8 @@ const getGraph = type => {
     switch (type) {
         case "finishes": {
             return (
-                <LineChart
-                    id="line-chart-finish"
+                <MultipleLineChart
+                    id="multiple-line-chart-finish"
                     type="finish"
                     invert={false}
                     xLabel="seasons"
@@ -22,8 +23,8 @@ const getGraph = type => {
             )
         }
         case "points": {
-            return <LineChart
-                id="line-chart-point"
+            return <MultipleLineChart
+                id="multiple-line-chart-point"
                 type="points"
                 invert={true}
                 xLabel="seasons"
@@ -31,12 +32,12 @@ const getGraph = type => {
             />
         }
         case "goal-differences": {
-            return <LineChart
-                id="line-chart-goalDiff"
+            return <MultipleLineChart
+                id="multiple-line-chart-goalDiff"
                 type="goaldiff"
                 invert={true}
                 xLabel="seasons"
-                yLabel="Goal Difference"
+                yLabel="Goal Differences"
             />
         }
         default: {
@@ -45,7 +46,7 @@ const getGraph = type => {
     }
 }
 
-export const PartOne = () => {
+export const PartTwo = () => {
     const [data, setData] = useState("finishes");
     const [steps, setSteps] = useState(["finishes", "points", "goal-differences"]);
     const [progress, setProgress] = useState(0);
@@ -64,11 +65,13 @@ export const PartOne = () => {
         setProgress(progress)
     };
 
-    return (
+    return(
         <div>
+
             <div style={{ margin: 30 }}>
-                <h2> Part 1 - Pre/Post Ferguson Era</h2>
+                <h2> Part 2 - Post Ferguson Era</h2>
             </div>
+
             <div
                 style={{
                     padding: '40vh 2vw 20vh',
